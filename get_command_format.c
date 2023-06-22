@@ -14,6 +14,8 @@ void (*get_format(char *formatz))(stack_t **, unsigned int)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
 		{"NULLo", NULL}
 	};
 

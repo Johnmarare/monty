@@ -53,3 +53,12 @@ void q_swap(stack_t **head)
 	tmp->n = tmp->next->n;
 	tmp->next->n = i;
 }
+/**
+ * q_add - add command
+ * @head: head of list
+ * Return: void
+ */
+void q_add(stack_t **head)
+{
+	(void) head;
+}

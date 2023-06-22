@@ -105,3 +105,24 @@ void s_swap(stack_t **head)
 	tail->n = tail->prev->n;
 	tail->prev->n = i;
 }
+/**
+ * s_add - add
+ * @head: head of list
+ * Return: void
+ */
+void s_add(stack_t **head)
+{
+	stack_t *tail, *prev;
+	int a, b;
+	(void) head;
+
+	tail = *info.tail_list;
+	prev = tail->prev;
+
+	a = tail->n;
+	b = tail->prev->n;
+	prev->n = a + b;
+	free(tail);
+	prev->next = NULL;
+	*info.tail_list = prev;
+}
