@@ -88,3 +88,20 @@ void s_pop(stack_t **head)
 	free(*info.tail_list);
 	*info.tail_list	= s_last;
 }
+/**
+ * s_swap - stack swap command
+ * @head: head of list
+ * Return: void
+ */
+void s_swap(stack_t **head)
+{
+	stack_t *tail;
+	int i;
+	(void) head;
+
+	tail = *info.tail_list;
+
+	i = tail->n;
+	tail->n = tail->prev->n;
+	tail->prev->n = i;
+}

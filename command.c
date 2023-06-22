@@ -11,6 +11,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	int i;
 	(void) line_number;
+	(void) stack;
 
 	if (check_argument("push") != 1 || to_number(&i) != 1)
 	{
@@ -87,3 +88,4 @@ void pop(stack_t **head, unsigned int line_number)
 	}
 	info.len--;
 }
+

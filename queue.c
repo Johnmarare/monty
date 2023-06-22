@@ -38,3 +38,18 @@ void q_pop(stack_t **head)
 	free(*head);
 	*head = current;
 }
+/**
+ * q_swap - queue swap command
+ * @head: head of list
+ * Return: void
+ */
+void q_swap(stack_t **head)
+{
+	int i;
+	stack_t *tmp;
+
+	tmp = *head;
+	i = tmp->n;
+	tmp->n = tmp->next->n;
+	tmp->next->n = i;
+}

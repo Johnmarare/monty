@@ -28,3 +28,12 @@ void pop_error(void)
 	fprintf(stderr, "L%d: can't pop an empty stack\n", info.line_number);
 	exit(EXIT_FAILURE);
 }
+/**
+ * swap_error - swap error
+ * Return: void
+ */
+void swap_error(void)
+{
+	fprintf(stderr, "L%d: can't swap, stack too short\n", info.line_number);
+	exit(EXIT_FAILURE);
+}
