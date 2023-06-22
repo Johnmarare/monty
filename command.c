@@ -37,3 +37,28 @@ void pall(stack_t **stack, unsigned int line_number)
 		q_pall(stack);
 	}
 }
+/**
+ * pint - prints the value at top of stack
+ * @stack: points to heap
+ * @line_number: number
+ * Return: void
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+	(void) line_number;
+
+	if (info.len == 0)
+	{
+		free_all(1, 1, 1, 1, 1);
+		pint_error();
+	}
+
+	if (strcmp(info.type, "stack") == 0)
+	{
+		s_pint(stack);
+	}
+	else
+	{
+		q_pint(stack);
+	}
+}

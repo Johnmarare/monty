@@ -48,3 +48,19 @@ void s_pall(stack_t **head)
 		}
 	}
 }
+/**
+ * s_pint - pint stack command
+ * @head: head of the list
+ * Return: void
+ */
+void s_pint(stack_t **head)
+{
+	stack_t *tail;
+
+	tail = *head;
+	while (tail->next != NULL)
+	{
+		tail = tail->next;
+	}
+	printf("%d\n", tail->n);
+}

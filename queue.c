@@ -15,3 +15,12 @@ void q_pall(stack_t **head)
 		printf("%d\n", h->n);
 	}
 }
+/**
+ * q_pint - qpint
+ * @head: head of list
+ * Return: void
+ */
+void q_pint(stack_t **head)
+{
+	printf("%d\n", (*head)->n);
+}

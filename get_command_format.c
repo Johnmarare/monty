@@ -10,11 +10,12 @@ void (*get_format(char *formatz))(stack_t **, unsigned int)
 
 	instruction_t opcodes_cases[] = {
 		{"push", push},
-		{"pall", pall}
+		{"pall", pall},
+		{"pint", pint}
 	};
 
 	i = 0;
-	while (i < 3)
+	while (i < 4)
 	{
 		if (strcmp(formatz, opcodes_cases[i].opcode) == 0)
 		{

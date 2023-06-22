@@ -74,7 +74,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pop(stack_t **head, unsigned int line_number);
 void swap(stack_t **head, unsigned int line_number);
-void pint(stack_t **head, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 void add(stack_t **head, unsigned int line_number);
 void nop(stack_t **head, unsigned int line_number);
 void sub(stack_t **head, unsigned int line_number);
@@ -95,6 +95,7 @@ void unknown_ins(void);
 void number_arguments_error(void);
 void malloc_error(void);
 void invalid(void);
+void pint_error(void);
 /*some utility functions*/
 char *ft_strdup(char *s);
 int is_space(int c);
@@ -108,7 +109,7 @@ void execute_file(void);
 void initialize_heap(void);
 /*memory_cleanup*/
 void free_all(int a, int b, int c, int d, int e);
-void fill_info(char ***_arguments, FILE **_file, char **buffer_line, char **cpy_line);
+void fill_info(char ***, FILE **, char **, char **);
 char **mall_c(int a);
 void free_2_(char ***parsed_buff);
 void free_(char **parsed_buff);
