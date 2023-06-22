@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -40,15 +41,16 @@ typedef struct instruction_s
  * @type: type of list or queue
  * @len: len of list
  * @line_number: line of exec command
- * @nymber_args: number of args after parsing
+ * @number_args: number of args after parsing
  * @_arguments: argument after parsing
  * @cpy_line: copy of line after getline
  * @_file: file executed
  * @buffer_line: line allocated by getline
  * @head_list: head of the list
  * @tail_list: tail of the list
+ * @state: ether stack or queue
  * Description: doubly linked list node structure for
- * 		stack, queues -- LIFO, FIFO
+ *		stack, queues -- LIFO, FIFO
  */
 typedef struct settings
 {
@@ -83,6 +85,8 @@ void _pchar(stack_t **head, unsigned int line_number);
 void print_string(stack_t **head, unsigned int line_number);
 void _rot(stack_t **head, unsigned int line_number);
 /*nodes, insertion, delition, free*/
+stack_t *add_dnodeint_end(stack_t **head, int n);
+void *new_node(int n);
 void free_dlistint(void);
 /*ERROR*/
 void add_error(void);
@@ -90,10 +94,14 @@ void file_error(char *file);
 void unknown_ins(void);
 void number_arguments_error(void);
 void malloc_error(void);
+void invalid(void);
 /*some utility functions*/
 char *ft_strdup(char *s);
 int is_space(int c);
 int is_empty(char *s);
+/*helpers*/
+int to_number(int *num);
+int check_argument(char *op_code);
 /*execute functions*/
 void execute_line_(void);
 void execute_file(void);

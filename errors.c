@@ -17,6 +17,10 @@ void number_arguments_error(void)
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
+/**
+ * unknown_ins - unknown instruction
+ * Return:void
+ */
 void unknown_ins(void)
 {
 	fprintf(stderr, "L%u: unknown instruction %s\n",

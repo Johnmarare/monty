@@ -16,10 +16,6 @@ void (*get_format(char *formatz))(stack_t **, unsigned int)
 	i = 0;
 	while (i < 3)
 	{
-		/*if (formatz[0] == '#')
-		{
-			return (nop);
-		}*/
 		if (strcmp(formatz, opcodes_cases[i].opcode) == 0)
 		{
 			return (opcodes_cases[i].f);

@@ -50,7 +50,7 @@ void execute_file(void)
 void execute_line_(void)
 {
 	char *cpy_line, **_arguments;
-	void(*f)(stack_t **, unsigned int);
+	void (*f)(stack_t **, unsigned int);
 
 	_arguments = mall_c(2);
 	cpy_line = ft_strdup(info.buffer_line);

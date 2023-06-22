@@ -1,4 +1,6 @@
 #include "monty.h"
+#include "stack.h"
+#include "queue.h"
 /**
  * push - pushes an element to stack
  * @stack: stack
@@ -8,39 +10,13 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	int i;
-	char *value = strtok(NULL, " \n\t");
-	stack_t *new_node;
+	(void) line_number;
 
-	if (value == NULL)
+	if (check_argument("push") != 1 || to_number(&i) != 1)
 	{
-		fprintf(stderr, "L%d: usage: push integer", line_number);
-		exit(EXIT_FAILURE);
+		invalid();
 	}
-
-	for (i = 0; value[i] != '\0'; i++)
-	{
-		if (value[i] < '0' || value[i] > '9')
-		{
-			fprintf(stderr, "L%d: usage: push integer", line_number);
-			exit(EXIT_FAILURE);
-		}
-	}
-
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-	{
-		fprintf(stderr, "L%d: usage: push integer", line_number);
-		exit(EXIT_FAILURE);
-	}
-	new_node->n = atoi(value);
-	new_node->prev = NULL;
-	new_node->next = *stack;
-
-	if (*stack != NULL)
-	{
-		(*stack)->prev = new_node;
-	}
-	*stack = new_node;
+	add_dnodeint_end(stack, i);
 }
 /**
  * pall - print all values on stack
@@ -50,13 +26,14 @@ void push(stack_t **stack, unsigned int line_number)
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp;
 	(void)line_number;
 
-	temp = *stack;
-	while (temp != NULL)
+	if (strcmp(info.type, "stack") == 0)
 	{
-		printf("%d\n", temp->n);
-		temp = temp->next;
+		s_pall(stack);
+	}
+	else
+	{
+		q_pall(stack);
 	}
 }
