@@ -86,3 +86,29 @@ void sub(stack_t **head, unsigned int line_number)
 		q_sub(head);
 	}
 }
+/**
+ * _div - swap last two numbers
+ * @head: head of the list
+ * @line_number: line_number
+ * Return: Nothing
+ */
+void _div(stack_t **head, unsigned int line_number)
+{
+	(void) line_number;
+
+	if (info.len < 2)
+	{
+		free_all(1, 1, 1, 1, 1);
+		div_error();
+	}
+
+	if ((*info.tail_list)->n == 0)
+	{
+		free_all(1, 1, 1, 1, 1);
+		div_error_2();
+	}
+	if (strcmp(info.type, "stack") == 0)
+		s_div(head);
+	else
+		q_div(head);
+}

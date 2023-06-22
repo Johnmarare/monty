@@ -21,3 +21,24 @@ void s_sub(stack_t **head)
 	prev->next = NULL;
 	*info.tail_list = prev;
 }
+/**
+ * s_div - division command
+ * @head: head of the list
+ * Return: void
+ */
+void s_div(stack_t **head)
+{
+	stack_t *tail, *prev;
+	int a, b;
+	(void) head;
+	tail = *info.tail_list;
+	prev = tail->prev;
+
+	a = tail->n;
+	b = tail->prev->n;
+	prev->n = b / a;
+	free(tail);
+	prev->next = NULL;
+	*info.tail_list = prev;
+
+}

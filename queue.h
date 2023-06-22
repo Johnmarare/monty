@@ -7,5 +7,6 @@ void q_pop(stack_t **head);
 void q_swap(stack_t **head);
 void q_add(stack_t **head);
 void q_sub(stack_t **head);
+void q_div(stack_t **head);
 
 #endif /*_QUEUE_H_*/
