@@ -62,3 +62,28 @@ void pint(stack_t **stack, unsigned int line_number)
 		q_pint(stack);
 	}
 }
+/**
+ * pop - deletes stack
+ * @line_number: number
+ * @head: head of the list
+ * Return: void
+ */
+void pop(stack_t **head, unsigned int line_number)
+{
+	(void) line_number;
+
+	if (info.len == 0)
+	{
+		free_all(1, 1, 1, 1, 1);
+		pop_error();
+	}
+	if (strcmp(info.type, "stack") == 0)
+	{
+		s_pop(head);
+	}
+	else
+	{
+		q_pop(head);
+	}
+	info.len--;
+}

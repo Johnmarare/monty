@@ -24,3 +24,17 @@ void q_pint(stack_t **head)
 {
 	printf("%d\n", (*head)->n);
 }
+/**
+ * q_pop - pop command in queue
+ * @head: head of list
+ * Return: void
+ */
+void q_pop(stack_t **head)
+{
+	stack_t *current;
+
+	current = *head;
+	current->prev = NULL;
+	free(*head);
+	*head = current;
+}

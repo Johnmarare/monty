@@ -64,3 +64,27 @@ void s_pint(stack_t **head)
 	}
 	printf("%d\n", tail->n);
 }
+/**
+ * s_pop - pop command
+ * @head: head of list
+ * Return: void
+ */
+void s_pop(stack_t **head)
+{
+	stack_t *s_last;
+	(void) head;
+
+	if (info.len == 1)
+	{
+		free(*info.tail_list), *info.tail_list = NULL;
+		*info.head_list = NULL;
+		return;
+	}
+	s_last = (*info.tail_list)->prev;
+	if (s_last != NULL)
+	{
+		s_last->next = NULL;
+	}
+	free(*info.tail_list);
+	*info.tail_list	= s_last;
+}

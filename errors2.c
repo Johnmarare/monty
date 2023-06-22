@@ -19,3 +19,12 @@ void pint_error(void)
 	fprintf(stderr, "L%d: can't pint, stack empty\n", info.line_number);
 	exit(EXIT_FAILURE);
 }
+/**
+ * pop_error - pop error
+ * Return: void
+ */
+void pop_error(void)
+{
+	fprintf(stderr, "L%d: can't pop an empty stack\n", info.line_number);
+	exit(EXIT_FAILURE);
+}
