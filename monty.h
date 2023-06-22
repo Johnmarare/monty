@@ -98,6 +98,7 @@ void invalid(void);
 void pint_error(void);
 void pop_error(void);
 void swap_error(void);
+void sub_error(void);
 /*some utility functions*/
 char *ft_strdup(char *s);
 int is_space(int c);

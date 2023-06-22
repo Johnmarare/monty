@@ -16,11 +16,12 @@ void (*get_format(char *formatz))(stack_t **, unsigned int)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
 		{"NULLo", NULL}
 	};
 
 	i = 0;
-	while (i < 6)
+	while (i < 8)
 	{
 		if (strcmp(formatz, opcodes_cases[i].opcode) == 0)
 		{

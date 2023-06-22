@@ -61,3 +61,28 @@ void nop(stack_t **head, unsigned int line_number)
 	(void) head;
 	(void) line_number;
 }
+/**
+ * sub - perfoms subraction
+ * @head: head of list
+ * @line_number: line_number
+ * Return: void
+ */
+void sub(stack_t **head, unsigned int line_number)
+{
+	(void) line_number;
+
+	if (info.len < 2)
+	{
+		free_all(1, 1, 1, 1, 1);
+		sub_error();
+	}
+
+	if (strcmp(info.type, "stack") == 0)
+	{
+		s_sub(head);
+	}
+	else
+	{
+		q_sub(head);
+	}
+}
