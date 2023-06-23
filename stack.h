@@ -12,5 +12,7 @@ void s_sub(stack_t **head);
 void s_div(stack_t **head);
 void s_mul(stack_t **head);
 void s_mod(stack_t **head);
+void s_pchar(stack_t **head);
+void s_print_string(stack_t **head);
 
 #endif /*_STACK_H_*/

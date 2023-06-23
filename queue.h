@@ -10,5 +10,7 @@ void q_sub(stack_t **head);
 void q_div(stack_t **head);
 void q_mul(stack_t **head);
 void q_mod(stack_t **head);
+void q_print_string(stack_t **head);
+void q_pchar(stack_t **head);
 
 #endif /*_QUEUE_H_*/

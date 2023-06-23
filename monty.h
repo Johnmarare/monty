@@ -103,6 +103,8 @@ void div_error_2(void);
 void div_error(void);
 void mul_error(void);
 void mod_error(void);
+void pchar_error(void);
+void pchar_error_2(void);
 /*some utility functions*/
 char *ft_strdup(char *s);
 int is_space(int c);
