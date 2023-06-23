@@ -20,12 +20,17 @@ void (*get_format(char *formatz))(stack_t **, unsigned int)
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
+		{"#", nop},
 		{"NULLo", NULL}
 	};
 
 	i = 0;
-	while (i < 10)
+	while (i < 12)
 	{
+		if (formatz[0] == '#')
+		{
+			return (nop);
+		}
 		if (strcmp(formatz, opcodes_cases[i].opcode) == 0)
 		{
 			return (opcodes_cases[i].f);
