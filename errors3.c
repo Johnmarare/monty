@@ -17,3 +17,12 @@ void div_error_2(void)
 	fprintf(stderr, "L%d: division by zero\n", info.line_number);
 	exit(EXIT_FAILURE);
 }
+/**
+ * mul_error - error msg
+ * Return: void
+ */
+void mul_error(void)
+{
+	fprintf(stderr, "L%d: can't mul, stack too short\n", info.line_number);
+	exit(EXIT_FAILURE);
+}

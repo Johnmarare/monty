@@ -3,7 +3,7 @@
 #include "queue.h"
 
 /**
- * q_sub - add command
+ * q_sub - subtraction command
  * @head: head of the list
  * Return: void
  */
@@ -12,11 +12,20 @@ void q_sub(stack_t **head)
 	(void) head;
 }
 /**
- * q_div - add command
+ * q_div - division command
  * @head: head of the list
  * Return: void
  */
 void q_div(stack_t **head)
+{
+	(void) head;
+}
+/**
+ * q_mul - multiplication command
+ * @head: head of the list
+ * Return: void
+ */
+void q_mul(stack_t **head)
 {
 	(void) head;
 }

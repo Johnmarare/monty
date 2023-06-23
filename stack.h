@@ -10,5 +10,6 @@ void s_swap(stack_t **head);
 void s_add(stack_t **head);
 void s_sub(stack_t **head);
 void s_div(stack_t **head);
+void s_mul(stack_t **head);
 
 #endif /*_STACK_H_*/
