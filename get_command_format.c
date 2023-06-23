@@ -19,6 +19,7 @@ void (*get_format(char *formatz))(stack_t **, unsigned int)
 		{"sub", sub},
 		{"div", _div},
 		{"mul", _mul},
+		{"mod", _mod},
 		{"NULLo", NULL}
 	};
 
