@@ -26,7 +26,7 @@ void (*get_format(char *formatz))(stack_t **, unsigned int)
 	};
 
 	i = 0;
-	while (i < 13)
+	while (i < 14)
 	{
 		if (formatz[0] == '#')
 		{
