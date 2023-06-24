@@ -79,3 +79,27 @@ void pstr(stack_t **head, unsigned int line_number)
 	else
 		q_print_string(head);
 }
+/**
+ * _rot - rotates stack to top
+ * @head: head of list
+ * @line_number: line number
+ * Return: void
+ */
+void _rot(stack_t **head, unsigned int line_number)
+{
+	static stack_t *temp, *prev;
+
+	(void) line_number;
+	(void) head;
+	if (info.len < 2)
+		return;
+	temp = *info.tail_list;
+	prev = temp->prev;
+
+	temp->prev = NULL;
+	temp->next = *info.head_list;
+	(*info.head_list)->prev = temp;
+
+	*info.head_list = temp;
+	*info.tail_list = prev;
+}

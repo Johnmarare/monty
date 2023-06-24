@@ -23,11 +23,12 @@ void (*get_format(char *formatz))(stack_t **, unsigned int)
 		{"#", nop},
 		{"pchar", _pchar},
 		{"pstr", pstr},
+		{"rotl", _rot},
 		{"NULLo", NULL}
 	};
 
 	i = 0;
-	while (i < 14)
+	while (i < 15)
 	{
 		if (formatz[0] == '#')
 		{
