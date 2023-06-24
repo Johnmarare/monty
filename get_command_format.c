@@ -22,6 +22,7 @@ void (*get_format(char *formatz))(stack_t **, unsigned int)
 		{"mod", _mod},
 		{"#", nop},
 		{"pchar", _pchar},
+		{"pstr", pstr},
 		{"NULLo", NULL}
 	};
 

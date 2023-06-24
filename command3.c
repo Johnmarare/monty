@@ -1,8 +1,6 @@
 #include "monty.h"
 #include "stack.h"
 #include "queue.h"
-
-
 /**
  * _mod - swap last two numbers
  * @head: head of the list
@@ -60,4 +58,24 @@ void _pchar(stack_t **head, unsigned int line_number)
 		s_pchar(head);
 	else
 		q_pchar(head);
+}
+/**
+ * print_string - print all elements in the list
+ * @head: head of the list
+ * @line_number: line_number
+ * Return: Nothing
+ */
+void pstr(stack_t **head, unsigned int line_number)
+{
+	(void) line_number;
+	if (info.len == 0)
+	{
+		printf("\n");
+		return;
+	}
+
+	if (strcmp(info.type, "stack") == 0)
+		s_print_string(head);
+	else
+		q_print_string(head);
 }
