@@ -60,7 +60,7 @@ void _pchar(stack_t **head, unsigned int line_number)
 		q_pchar(head);
 }
 /**
- * print_string - print all elements in the list
+ * pstr - print all elements in the list
  * @head: head of the list
  * @line_number: line_number
  * Return: Nothing
@@ -81,25 +81,26 @@ void pstr(stack_t **head, unsigned int line_number)
 }
 /**
  * _rot - rotates stack to top
- * @head: head of list
+ * @stack: head of list
  * @line_number: line number
  * Return: void
  */
 void _rot(stack_t **stack, unsigned int line_number)
 {
-	static stack_t *temp, *prev;
+	stack_t *temp = NULL;
 
 	(void) line_number;
-	(void) stack;
-	if (info.len < 2)
-		return;
-	temp = *info.tail_list;
-	prev = temp->prev;
 
-	temp->prev = NULL;
-	temp->next = *info.head_list;
-	(*info.head_list)->prev = temp;
+	if (*stack && (*stack)->next)
+	{
+		temp = *stack;
+		while (temp->next)
+			temp = temp->next;
 
-	*info.head_list = temp;
-	*info.tail_list = prev;
+		temp->next = *stack;
+		(*stack)->prev = temp;
+		*stack = (*stack)->next;
+		(*stack)->prev->next = NULL;
+		(*stack)->prev = NULL;
+	}
 }
