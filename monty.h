@@ -84,6 +84,7 @@ void _mod(stack_t **head, unsigned int line_number);
 void _pchar(stack_t **head, unsigned int line_number);
 void pstr(stack_t **head, unsigned int line_number);
 void _rot(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
 /*nodes, insertion, delition, free*/
 stack_t *add_dnodeint_end(stack_t **head, int n);
 void *new_node(int n);
