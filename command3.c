@@ -85,21 +85,23 @@ void pstr(stack_t **head, unsigned int line_number)
  * @line_number: line number
  * Return: void
  */
-void _rot(stack_t **head, unsigned int line_number)
+void _rot(stack_t **stack, unsigned int line_number)
 {
-	static stack_t *temp, *prev;
+	stack_t *top, *bottom;
 
-	(void) line_number;
-	(void) head;
-	if (info.len < 2)
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 		return;
-	temp = *info.tail_list;
-	prev = temp->prev;
 
-	temp->prev = NULL;
-	temp->next = *info.head_list;
-	(*info.head_list)->prev = temp;
+	top = (*stack)->next;
+	bottom = (*stack)->next;
+	while (bottom->next != NULL)
+		bottom = bottom->next;
 
-	*info.head_list = temp;
-	*info.tail_list = prev;
+	top->next->prev = *stack;
+	(*stack)->next = top->next;
+	bottom->next = top;
+	top->next = NULL;
+	top->prev = bottom;
+
+	(void)line_number;
 }
