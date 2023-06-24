@@ -90,7 +90,7 @@ void _rot(stack_t **stack, unsigned int line_number)
 	static stack_t *temp, *prev;
 
 	(void) line_number;
-	(void) head;
+	(void) stack;
 	if (info.len < 2)
 		return;
 	temp = *info.tail_list;
